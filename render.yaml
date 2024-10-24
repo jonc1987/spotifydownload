@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: spotify-download
+    env: python
+    buildCommand: curl https://getspotifydownload.schollz.com | bash
+    startCommand: ./spotifydownload web
+    plan: free
+    region: oregon
+    envVars:
+      - key: FFMPEG_PATH
+        value: /usr/bin/ffmpeg
